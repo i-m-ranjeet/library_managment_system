@@ -1,38 +1,293 @@
-.App {
-  text-align: center;
+*{
+  padding: 0; margin: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body{
+  min-width: 100%;
   min-height: 100vh;
+  position: relative;
+  top: 0;
+  left: 0;
+  background: rgb(0,37,80) ;
+}
+nav{
+  width: 100%;
+  height: 50px;
+  background: rgb(249,198,35);
+  /* border-bottom: 1px solid  #fff; */
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.432);
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 9;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+nav .logo{
+position: relative;
+}
+nav .logo img{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  filter: drop-shadow(0 0  4px #fff);
+}
+nav ul{
+  display: flex;
+  list-style: none;
+  
+}
+nav ul li, nav .loginreg a span{
+  margin: 0 10px;
+  padding: 4px 6px;
+  border-radius: 4px;
+  transition: .2s;
+}
+nav .loginreg span{
+  color: rgb(249,198,35);
+  background: rgb(0,37,80);
+}
+nav .loginreg a:nth-child(1) span{
+  color: rgb(0,37,80);
+  background: rgb(249,198,35);
+}
+nav ul li:hover,nav .loginreg a:hover span{
+  color: rgb(249,198,35);
+  background: rgb(0,37,80);
+  box-shadow: 2px 2px  1px #fff;
+}
+
+
+/* Styling Login and register Component */
+.login, .register, .addbook {
+  transform: translateY(50px);
+  width: 100%;
+  height: calc(100vh - 50px);
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  overflow: hidden;
+}
+form{
+  max-height: 80vh;
+  background: rgb(249,198,35);
+  border-radius: 10px;
+  box-shadow: 20px 20px 0 #fff, -20px -20px 20px rgba(0, 0, 0, 0.371);
+  padding: 40px;
+}
+.register form{
+  width: 80%;
+}
+form div.inputcontainer{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  /* flex-direction: column; */
+}
+form div.inputcontainer:last-child{
+  align-items: center;
+  flex-direction: column;
+}
+.addbook form div.inputcontainer:last-child{
+  align-items: center;
+  flex-direction: row;
+}
+.addbook form div.inputcontainer:last-child input[type="submit"]{
+  transform: translateY(12px);
+}
+form div.inputcontainer:last-child div{
+  margin: 10px;
+}
+form div.inputcontainer:last-child div a{
+  width: 100%;
+  text-align: center;
+}
+form div.inputcontainer:last-child div a{
+  text-decoration: none;
+}
+form div.inputcontainer:last-child div a:hover{
+  text-decoration: underline;
+}
+form div div{
+  min-width:300px ;
+  margin: 20px 10px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+
+}
+form div.heading h1{
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: center;
+  color: rgb(0,37,80);
+}
+form div label{
+  color: rgb(0,37,80);
+}
+form div input, form div select{
+  width: 100%;
+  border: none;
+  outline: none;
+  color: rgb(0,37,80);
+  padding: 6px;
+  border-radius: 10px;
+}
+.login form div input{
+  margin-bottom: 20px;
+}
+form div input[type="submit"]{
+  color: rgb(249,198,35);
+  background: rgb(0,37,80);
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Designing Home Component and books */
+
+.books{
+  transform: translateY(50px);
+  min-height: calc(100vh - 50px);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.books .book{
+  width: 300px;
+  min-height:100px ;
+  margin: 20px;
+  border: 1px solid rgb(249,198,35);
+  background: rgb(249,198,35);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: .2s;
+  /* box-shadow: 0 0 4px rgb(249,198,35); */
+}
+.books .book .title{
+  text-transform: capitalize;
+  text-align: center;
+  background: #fff;
+  padding: 3px;
+  font-weight: 900;
+  color: rgb(0,37,80);
+  border-bottom: 1px solid rgba(0, 37, 80, 0.642);
+}
+.author,.subject,.category{
+  border-bottom: 1px solid #fff;
+  padding: 4px 0 0 4px;
+  color: rgb(0,37,80);
+  font-weight: 1;
+  font-style: italic;
+  word-spacing: 4px;
+}
+.author span,.subject span,.category span{
+  color: rgb(0,37,80);
+  font-style: normal;
+  font-weight: 900;
+}
+.books .book:hover{
+  transform: scale(1.04);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* notify msg styling */
+.msg{
+  position: fixed;
+  top: 15px;
+  right:-50% ;
+  padding: 10px 20px;
+  background: rgb(249,198,35);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.562);
+  color: rgb(0,37,80);
+  font-weight: 600;
+  border-radius: 5px;
+  transition: ease-in-out .4s;
+}
+.editdelete{
+  height: 25px;
+  overflow:hidden ;
+  display: flex;
+  align-items: center;
+  transition: .2s;
+  justify-content: flex-end;
+}
+.editdelete *{
+  display: none;
+}
+.books .book:hover .editdelete *{
+  display: block;
+  
+
+}
+.editdelete a{
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.editdelete img{
+  width: 20px;
+  margin: 5px 10px;
+  filter: drop-shadow(1px 1px 0 #fff);
+}
+.confirmdelete{
+  width: 100%;
+  display: none;
+  height: calc(100vh - 50px);
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 37, 80, 0.623);
+  backdrop-filter: blur(5px);
+  z-index: 8;
+}
+.confirmdelete.active{
+  display: block;
+}
+.confirmdelete .confirmcontainer{
+  width: 50%;
+  padding: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  background: rgb(249,198,35);
+  color: rgb(0,37,80);
+}
+.confirmdelete .confirmcontainer h3{
+  text-align: center;
+}
+.confirmdelete .confirmcontainer span{
+  width: 70px;
+  text-align: center;
+  margin: 0 10px;
+  padding: 5px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.confirmdelete .confirmcontainer div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+.confirmdelete .confirmcontainer span.no{
+  color: rgb(0,37,80);
+  padding: 5px 10px;
+  border: 1px solid rgb(0,37,80);
+}
+.confirmdelete .confirmcontainer span.no:hover{
+  background: rgb(202, 162, 28);
+}
+.confirmdelete .confirmcontainer span.yes{
+  color: rgb(249,198,35);
+  background: rgb(199, 25, 69);
+}
+.confirmdelete .confirmcontainer span.yes:hover{
+  background: rgb(170, 22, 59);
 }
