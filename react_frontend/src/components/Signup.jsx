@@ -1,6 +1,31 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 function Signup() {
+    const [signupdata,setsignupdata] = useState({})
+    
+    const navigate = useNavigate()
+
+    const getsignupdata = (e)=>{
+        setsignupdata({...signupdata,[e.target.name]:e.target.value})
+    }
+
+    const signup = (e)=>{
+        e.preventDefault()
+        axios.post('http://127.0.0.1:8000/admins/signup',signupdata,).then(res=>{
+            // console.log(res)
+            if(res.data.isregister){
+                navigate('/login')
+            }
+        })
+    }
+    useEffect(() => {
+        axios.get('http://127.0.0.1:8000/admins/login',).then(res=>{
+            if(res.data.islogin){
+                navigate('/')
+            }
+        })
+    }, []);
     return (
         <div className='register'>
             <form >
@@ -11,33 +36,33 @@ function Signup() {
                 <div className='inputcontainer'>
                     <div>
                         <label htmlFor="fname">Enter First Name</label>
-                        <input type="text" name="fname" id="fname" placeholder='Enter First Name...'/>
+                        <input onChange={getsignupdata} type="text" name="fname" id="fname" placeholder='Enter First Name...'/>
                     </div>
                     <div>
                         <label htmlFor="lname">Enter Last Name</label>
-                        <input type="text" name="lname" id="lname" placeholder='Enter Last Name...'/>
+                        <input onChange={getsignupdata} type="text" name="lname" id="lname" placeholder='Enter Last Name...'/>
                     </div>
                 </div>
 
                 <div className='inputcontainer'>
                     <div>
                         <label htmlFor="email">Enter Email</label>
-                        <input type="email" name="email" id="email" placeholder='Enter Email Address...'/>
+                        <input onChange={getsignupdata} type="email" name="email" id="email" placeholder='Enter Email Address...'/>
                     </div>
                     <div>
                         <label htmlFor="mobile">Enter Mobile</label>
-                        <input type="number" name="mobile" id="mobile" placeholder='Enter Mobile Number...'/>
+                        <input onChange={getsignupdata} type="number" name="mobile" id="mobile" placeholder='Enter Mobile Number...'/>
                     </div>
                 </div>
 
                 <div className="inputcontainer">
                 <div>
                     <label htmlFor="pass1">Enter Password</label>
-                    <input type="password" name="password" id="pass1" placeholder='Create New Password...'/>
+                    <input onChange={getsignupdata} type="password" name="pass1" id="pass1" placeholder='Create New Password...'/>
                 </div>
                 <div>
                     <label htmlFor="pass2">Confirm Password</label>
-                    <input type="password" name="password" id="pass2" placeholder='Confirm Password...'/>
+                    <input onChange={getsignupdata} type="password" name="password" id="pass2" placeholder='Confirm Password...'/>
                 </div>
 
                 
@@ -45,7 +70,7 @@ function Signup() {
 
                <div className="inputcontainer">
                <div>
-                    <input type="submit" value="Register" />
+                    <input type="submit" onClick={signup} value="Register" />
                 </div>
                <div>
                     <Link style={{  color: "#002550" }} to="/login">I already have an account!</Link>

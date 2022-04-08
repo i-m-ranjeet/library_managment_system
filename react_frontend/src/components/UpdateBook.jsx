@@ -36,7 +36,7 @@ function UpdateBook() {
     })
   },[])
   useEffect(()=>{
-    console.log(newbook)
+    // console.log(newbook)
   },[newbook])
   useEffect(() => {
     axios.get('http://127.0.0.1:8000/library/getsubjects').then(res => {

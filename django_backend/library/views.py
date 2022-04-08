@@ -77,7 +77,7 @@ def addCategory(request):
         category = serializers.BookCategorySerializer(data = request.data)
         if category.is_valid():
             category.save()
-            return Response({"msg":"Category is saved!"})
+            return Response({"msg":"Category Added Successfully!"})
         return Response(category.errors)
 
 @api_view(["POST"])
@@ -86,7 +86,7 @@ def addSubject(request):
         subject = serializers.BookSubjectSerializer(data = request.data)
         if subject.is_valid():
             subject.save()
-            return Response({"msg":"subject is saved!"})
+            return Response({"msg":"Subject Added Successfully!"})
         return Response(subject.errors)
 
 @api_view(["GET"])

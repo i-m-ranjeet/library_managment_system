@@ -5,14 +5,14 @@ from django.db import models
 
 
 class BookCategory(models.Model):
-    category_name = models.CharField(max_length=25) # Novels, Comics, History, Poietry, Travel
+    category_name = models.CharField(max_length=25, unique=True) # Novels, Comics, History, Poietry, Travel
 
     def __str__(self):
         return self.category_name
 
 
 class BookSubject(models.Model):
-    subject_name = models.CharField(max_length=25) # Hindi, English, Mathematics, Social Science
+    subject_name = models.CharField(max_length=25, unique=True) # Hindi, English, Mathematics, Social Science
 
     def __str__(self):
         return self.subject_name

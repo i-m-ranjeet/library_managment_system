@@ -57,7 +57,10 @@ nav ul li:hover,nav .loginreg a:hover span{
   background: rgb(0,37,80);
   box-shadow: 2px 2px  1px #fff;
 }
-
+nav a .logout{
+  color: rgb(249,198,35);
+  background: rgb(0,37,80);
+}
 
 /* Styling Login and register Component */
 .login, .register, .addbook {
@@ -143,6 +146,43 @@ form div input[type="submit"]{
   cursor: pointer;
   font-weight: 600;
   letter-spacing: 1px;
+}
+.extrainputs{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 10px;
+}
+.extrainputs span{
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  font-size: 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+  background: rgb(0,37,80);
+  color: rgb(249,198,35);
+  display: none;
+}
+.extrainputs span:hover{
+  background: rgb(6, 69, 141);
+}
+.extrainputs p{
+  color: rgb(0,37,80);
+  cursor: pointer;
+  width: 100%;
+  text-align: right;
+}
+.extrainputs p:hover{
+  text-decoration: underline;
+
+}
+.extrainputs input{
+  display: none;
+  width: 150px;
 }
 
 /* Designing Home Component and books */

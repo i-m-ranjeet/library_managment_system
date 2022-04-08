@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import update from './update.png'
 import remove from './remove.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 function Home() {
@@ -10,14 +10,24 @@ function Home() {
   const [callapi,setCallapi] = useState(true)
   const [willdelete,setWilldelete] = useState(null)
   const [modalclass,setmodalclass] = useState('confirmdelete')
+  const [islogin,setislogin] = useState(false)
+
+  // const navigate = useNavigate()
+  axios.defaults.withCredentials = true;
 
   const handleDelete = (id)=>{
     setWilldelete(id)
     setmodalclass('confirmdelete active')
   }
+  useEffect(()=>{
+    axios.get('http://127.0.0.1:8000/admins/login').then(res=>{
+      // console.log(res.data)
+        setislogin(res.data.islogin)
+    })
+  },[])
   useEffect(() => {
     axios.get('http://127.0.0.1:8000/library/allbooks').then(res => {
-      console.log(res)
+      // console.log(res)
       setbooks(res.data)
     })
   }, [callapi])
@@ -42,8 +52,8 @@ function Home() {
             <div className="category"><span>Category :</span> {ele.category}</div>
 
             <div className='editdelete'>
-              <Link to={`updatebook/${ele.id}`}><img src={update} alt="update" /></Link>
-              <img src={remove} onClick={()=>{handleDelete(ele.id)}} alt="delete" />
+              {islogin?<><Link to={`updatebook/${ele.id}`}><img src={update} alt="update" /></Link>
+              <img src={remove} onClick={()=>{handleDelete(ele.id)}} alt="delete" /></>:''}
             </div>
 
           </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 08, 2022 at 06:40 AM
+-- Generation Time: Apr 08, 2022 at 11:24 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -41,11 +41,7 @@ CREATE TABLE `admins_user` (
 --
 
 INSERT INTO `admins_user` (`id`, `fname`, `lname`, `email`, `mobile`, `password`) VALUES
-(1, 'Ranjeet', 'Meena', 'mrranjeet11115@gmail.com', 1234567889, 'aaa'),
-(2, 'rahul', 'Shekhawat', 'rahul1234@gmail.com', 1234567890, 'qwerty'),
-(3, 'rahul', 'Shekhawat', 'rahul111234@gmail.com', 1234567890, 'qwerty'),
-(4, 'Ranjeet', 'Meena', 'mrranjeet122221115@gmail.com', 2222222222, '1111'),
-(5, 'rahul', 'Shekhawat', 'rahul1ee234@gmail.com', 1234567890, 'qwerty');
+(1, 'Ranjeet', 'Meena', 'mrranjeet11115@gmail.com', 1234567889, 'ranjeet@123');
 
 -- --------------------------------------------------------
 
@@ -257,7 +253,8 @@ INSERT INTO `django_migrations` (`id`, `app`, `name`, `applied`) VALUES
 (19, 'admins', '0001_initial', '2022-04-06 17:10:06.668534'),
 (20, 'library', '0001_initial', '2022-04-07 06:06:28.352393'),
 (21, 'library', '0002_alter_book_author_alter_book_edition_and_more', '2022-04-07 06:27:36.816033'),
-(22, 'library', '0003_alter_book_edition', '2022-04-07 07:39:44.828087');
+(22, 'library', '0003_alter_book_edition', '2022-04-07 07:39:44.828087'),
+(23, 'library', '0004_alter_bookcategory_category_name_and_more', '2022-04-08 08:32:04.437270');
 
 -- --------------------------------------------------------
 
@@ -277,8 +274,45 @@ CREATE TABLE `django_session` (
 
 INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
 ('0siy4ortelesfe3a17lj90nkbpa0gtzs', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1ncJhQ:8HFT_gLfTe81dGCiPBckHB110-8uqEOVBr5xzSWzKVc', '2022-04-21 04:24:48.398791'),
+('14rbruj0qylf3bt6j770mtjpu4qa38nn', 'eyJ1c2VyaWQiOjF9:1ncjzH:2FD8YtWTARD53UAMF7x7IJJ4euMwYU0HCQCADL_fUx4', '2022-04-22 08:28:59.534560'),
+('2n8dam25w6zxjf6whsrtjwkct5tfa4tt', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1ncitv:u-8U2V2DG-OTyrsbaqpNAx4kjUUwgRSOiF0AUN3vGtg', '2022-04-22 07:19:23.219710'),
+('9mhzjduptjgnr90dbcyydmcs9ndztw14', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1ncitc:pvyXynm1xe4qA823cbr-zcL32u2L4MzlFrTkVUbFJfE', '2022-04-22 07:19:04.548226'),
+('9qg0zs502s99qjk5nrg9pdem6x6xz44h', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1ncjg4:Wcr6CWgkJXNj90hr_jEme0580wjSmy3rQcezPJ0Gk08', '2022-04-22 08:09:08.192631'),
 ('asuqv9a1zdif946xf3pmoqucx4m9n1t7', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1ncK5L:HTksLq6nYrmpHWiC3CNxlXEQNvE4VFZ5xEH0vUBl3gE', '2022-04-21 04:49:31.920123'),
-('wmtaz2kux05rr9x71nkw85tnnlsemraw', 'eyJ1c2VyIjoyLCJ1c2VyaWQiOjJ9:1ncAlU:Q_1En0XmZjSdKdxcr459hDrBe9lwxVCGN8CJod_Ht-8', '2022-04-20 18:52:24.267306');
+('cjahau02281wq7etuukxqgviosjb5we6', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1ncj2F:KowIqY9eGR2XEbEQUugi8N-FJ49-deCsG4WmkejvLXc', '2022-04-22 07:27:59.941586'),
+('d0by195xyfpjxa4y73d0jr78madgvltm', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1ncj0C:o6zbkDA7dpm3wSneoV_-TA2Le4Cu5dL5svHflC6xGjs', '2022-04-22 07:25:52.106953'),
+('dkhsqfb6dh8fd7gy4co09x4v3s00wqs6', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1ncita:ivMPZP8TNRQ7JFyC6vtud6_T6uS4cYItfjn1vEV8O7g', '2022-04-22 07:19:02.465975'),
+('e35tpluylu5fc3mit8ahfw9d7gd9s6rt', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1ncjgr:m3ZPn3804OHCk_NpB-cfDG5ABvVryspI23tI_IHLqpM', '2022-04-22 08:09:57.056315'),
+('eeu39uhe8a8awqghnl0lzuhzrgh3j3dl', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1ncjQv:-ocOKABPygBC2g5koimC3aob-YKB26zEZ73nV_4JehM', '2022-04-22 07:53:29.393254'),
+('er2au7xjmpfqwdc8djctepq5dqx7tnbh', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1ncj8s:jbYPaLMsY98vRPPXC27r2bx1Ewu3Ly10bHHqJ1cFSKQ', '2022-04-22 07:34:50.378296'),
+('j95i3jf3r857rmi51q6jv8j01d6fiewk', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1ncjLT:HDrwpXCm-9dAu1CORVTp6wu54PBvF5bYVQzOW1etI0w', '2022-04-22 07:47:51.670654'),
+('jqokznt4tjnfx87edzlgrewfifzkt2qg', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1nciwG:4Y10eYrL7OhFDqlZeKgfRPouSfCTeD1Cu3D7r_P6nfo', '2022-04-22 07:21:48.042059'),
+('jrup71jur9ecpnwjt3dzzpjli8vw7jug', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1ncjf1:02s22mgm-oLPX-Z74oHNYerKUdYP7AUCzIWmfZ0EPjI', '2022-04-22 08:08:03.630904'),
+('klbuixse2kugeuf3u31yoftptr7vw09q', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1ncj3d:BU04LGBQ08mz9BZ1zmYjzxKR8kvzNe64ujxoZZY3cW0', '2022-04-22 07:29:25.137445'),
+('kor54oj7y9vp2l1ogikp4uv4t5m18bt3', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1ncjS3:jF5YdAUWMIBEZKQQ2BAJmRsmyauW_KYoY-Ep_2upYKE', '2022-04-22 07:54:39.723034'),
+('ktvj26ylx6cbawf7pyv65pac9z14om3l', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1ncjbJ:mj2MvoJHfW9Fgq6r50eP0z-FzIRERuj8ibuczk4icJM', '2022-04-22 08:04:13.015336'),
+('m4c0ote3tbo5lfhctrhnr9nmufrd8ese', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1ncjVE:-kJ2u-4U1RCFtpQMzLKOUS4-nX2pF0OdIgS4AvFys-0', '2022-04-22 07:57:56.358423'),
+('mnd0xlnjb1gthmw33n8wpgdps6ih26ag', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1ncj1i:qEEGTkeoiEusfV47v4sjQI_M8LeQCpfQF0F150dzc-8', '2022-04-22 07:27:26.461486'),
+('mooo6iijjkml0eenc3zacvln13hwky39', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1ncite:4LFx_nk0DBmHXSu6PCF2Xn2nHb8Nf49pWQFjbOEc0zA', '2022-04-22 07:19:06.665737'),
+('n1vem28yu8prffmsdecivzrtek2xacic', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1nciyV:WrQucpJdQ3ngFtpgdR0jkkjumaCbhUFsBejs7ZunYFQ', '2022-04-22 07:24:07.786906'),
+('nca8byzmorxpgqw9v19yjso1dj1pisni', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1ncjky:Meis2yzOEoKAB9g3jbBmBEIX14TwtMJni3qyUSsY2M8', '2022-04-22 08:14:12.791561'),
+('o8pasxr5xwhh89f1rn6d6894d9pdjlou', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1ncjRT:YfM5H5G-geAZWpPT3OTFr31ZVTjnBdC08FkXDrsjlts', '2022-04-22 07:54:03.643388'),
+('p0mw2pc88g74e3xb4137ryqeyn17j5bu', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1ncivS:aySbgMQYo2yTCMg_KmV4aoxKTZgdQ0bZBnMviJR2Y-E', '2022-04-22 07:20:58.644402'),
+('q7y6zxwfsalh8u8cw30oqnzifjcfe7m8', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1ncjad:Z8yOBHtMnI8touNXdAGF2ia0zEhLQ83Y9ckGW79xvPM', '2022-04-22 08:03:31.965191'),
+('qfis1xv6yxtfsvg713lar84jz6w4w9xy', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1ncjLw:Q3xU8jpoHVbCEaQPCOO73p-y2yb9mgaJLFrMLAnl4bA', '2022-04-22 07:48:20.248100'),
+('qhnpwsb0v3opmaur9sww51gs9v85mm63', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1ncjTM:duynNleCYBcfDlHckYxSZ5hY-c5DJfZmUwjjKwkmHhQ', '2022-04-22 07:56:00.070665'),
+('t75pa4xjtv4vd0jiukh62crvtfrdj434', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1ncjXI:jvVuD2CMD5BjxcM2QvVMScMgoadsY6LCiEM-4jHx5GE', '2022-04-22 08:00:04.718590'),
+('thn22fvq0k37eynszvgssutohn8r8w4s', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1ncj7v:6S_Eo4D1YVl_KpoHf1xW2kYG_zClmE4SIq7JwBBZk8w', '2022-04-22 07:33:51.595823'),
+('tt7vwfde4x2lniix8q9rcd2hqtfstezn', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1ncjSg:-68n0222ZREM7rEYyMDlfmjcoyr08_6FbHwHkYj1q_M', '2022-04-22 07:55:18.016202'),
+('ud5nr9dzul2xhtwhtjohepf7gmmjr3be', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1ncivl:9Aw417T5rcAX8_axV0-zg-ODs1LuOg2HamUCzkvENZk', '2022-04-22 07:21:17.291360'),
+('uhooe8k62wwo7nene7xvl04qbkyz34fo', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1nciu4:9brMQ0x81WBhYF2DemkwCDFzVcvji2w-GzVGnEwih6s', '2022-04-22 07:19:32.588843'),
+('v7k9y0p41hz7062yqxj53i6o3ajxbxfd', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1nciyw:e_7nuw_HmaxB4g0x3mO0Pw-Oav1KNQ1m561SH0S4Gqg', '2022-04-22 07:24:34.217387'),
+('vsqkyfni21csof75kosbp46czzk4m9is', 'eyJ1c2VyaWQiOjF9:1nckox:6BylFyIpA7MuZuW_sK8YHwb4q9JaFOrJzMf9oZ-TJi0', '2022-04-22 09:22:23.092518'),
+('wmtaz2kux05rr9x71nkw85tnnlsemraw', 'eyJ1c2VyIjoyLCJ1c2VyaWQiOjJ9:1ncAlU:Q_1En0XmZjSdKdxcr459hDrBe9lwxVCGN8CJod_Ht-8', '2022-04-20 18:52:24.267306'),
+('x73bskahcawjgf8htinjdmyiuc240mkc', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1nciuh:roS4CLdgtEq7rlY75cJDDg2iUHGCS_ZPp7WKPul1TJE', '2022-04-22 07:20:11.571781'),
+('xkzrtwe4iacszd2ja4nstk5knx1cq2s0', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1ncjXg:CSPe9g1EPmZqbMoRBspEyYHOeQZH-X5RKM3K8OPRwQg', '2022-04-22 08:00:28.538407'),
+('ynlspaj1moi6cvfegsl4unmzq0a48zo3', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1nciv5:LGXiwzJUA1OPuh4HijcNACVwSOvqXb-s0kJmmsR--x4', '2022-04-22 07:20:35.944251'),
+('ztu3fi98mf0btz037n05ucklkuzcsrei', '.eJyrViotTi3KTFGyMtRRSstLzE1VslIKSszLSk0tUdJRyoGK-Kam5iUC-am5iZk5QH5uURFEjSEQmDqkg4T1kvNzgUpy85Myc4B6DI2MTUzNzC0sLGsBb-ofeA:1ncj6d:bDxfIczIJ7uz_GX_mnPLmRpsjXhlL1deI3eEGeHO8Lo', '2022-04-22 07:32:31.597889');
 
 -- --------------------------------------------------------
 
@@ -304,10 +338,7 @@ INSERT INTO `library_book` (`id`, `title`, `author`, `edition`, `category_id`, `
 (3, 'As You Like It', 'William Shakespeare', 'First', 2, 2),
 (4, 'Bad Science', '‎Ben Goldacre', 'Kindle Edition', 3, 3),
 (5, 'Wings of Fire', '‎APJ Abdul Kalam', NULL, 5, 4),
-(16, 'aaa', 'aaa', 'sss', 2, 3),
-(17, 'aaa', 'aaa', 'sss', 3, 1),
-(18, 'aaaqqqq123qqqq', 'aaa123', 'sss123', 5, 4),
-(19, 'As You Like It', 'William Shakespeare', 'First', 2, 2);
+(20, 'No Spin', 'Shane Warne', NULL, 8, 4);
 
 -- --------------------------------------------------------
 
@@ -325,11 +356,15 @@ CREATE TABLE `library_bookcategory` (
 --
 
 INSERT INTO `library_bookcategory` (`id`, `category_name`) VALUES
+(5, 'Biography'),
+(7, 'Educational'),
+(4, 'Horror'),
 (1, 'Motivational'),
 (2, 'Novel'),
 (3, 'Science'),
-(4, 'Horror'),
-(5, 'Biography');
+(8, 'Sports'),
+(9, 'Technical'),
+(6, 'Thriller');
 
 -- --------------------------------------------------------
 
@@ -347,10 +382,12 @@ CREATE TABLE `library_booksubject` (
 --
 
 INSERT INTO `library_booksubject` (`id`, `subject_name`) VALUES
+(4, 'biography'),
 (1, 'Business Studies'),
 (2, 'English'),
+(5, 'Mathematics'),
 (3, 'Science'),
-(4, 'biography');
+(10, 'Social Science');
 
 --
 -- Indexes for dumped tables
@@ -448,13 +485,15 @@ ALTER TABLE `library_book`
 -- Indexes for table `library_bookcategory`
 --
 ALTER TABLE `library_bookcategory`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `library_bookcategory_category_name_17934e15_uniq` (`category_name`);
 
 --
 -- Indexes for table `library_booksubject`
 --
 ALTER TABLE `library_booksubject`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `library_booksubject_subject_name_452f0c99_uniq` (`subject_name`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -464,7 +503,7 @@ ALTER TABLE `library_booksubject`
 -- AUTO_INCREMENT for table `admins_user`
 --
 ALTER TABLE `admins_user`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `auth_group`
@@ -518,25 +557,25 @@ ALTER TABLE `django_content_type`
 -- AUTO_INCREMENT for table `django_migrations`
 --
 ALTER TABLE `django_migrations`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `library_book`
 --
 ALTER TABLE `library_book`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `library_bookcategory`
 --
 ALTER TABLE `library_bookcategory`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `library_booksubject`
 --
 ALTER TABLE `library_booksubject`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Constraints for dumped tables

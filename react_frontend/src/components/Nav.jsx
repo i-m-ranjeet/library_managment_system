@@ -1,7 +1,12 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import logo from './logo.png'
-function Nav() {
+
+function Nav(props) {
+  
+
+  
   return (
     <nav>
         <div className="logo">
@@ -14,8 +19,8 @@ function Nav() {
         </ul>
 
         <div className="loginreg">
-            <Link style={{textDecoration: "none", color:"#002550"}} to="login"><span>Login</span></Link>
-            <Link style={{textDecoration: "none", color:"#002550"}} to="signup"><span>Register</span></Link>
+            {props.islogin?<a href="" onClick={(e)=>{e.preventDefault();axios.get('http://127.0.0.1:8000/admins/logout');props.setislogin(false);}} style={{textDecoration:"none"}}><span style={{background: "rgb(0,37,80)",color:"rgb(249,198,35)"}} className='logout'>Logout</span></a>:<><Link style={{textDecoration: "none", color:"#002550"}} to="login"><span>Login</span></Link>
+            <Link style={{textDecoration: "none", color:"#002550"}} to="signup"><span>Register</span></Link></>}
         </div>
     </nav>
   )
